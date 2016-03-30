@@ -3,6 +3,7 @@ import static playn.core.PlayN.*;
 
 import playn.core.Mouse;
 import playn.core.Touch;
+import sut.game01.core.Character.Zealot;
 import  tripleplay.game.Screen;
 import tripleplay.game.ScreenStack;
 import playn.core.Image;
@@ -13,6 +14,7 @@ public class TestScreen extends Screen {
     private final ScreenStack ss;
     private final ImageLayer back;
     private final ImageLayer bg;
+    private  Zealot z;
 
     public TestScreen(final ScreenStack ss) {
 
@@ -35,9 +37,13 @@ public class TestScreen extends Screen {
     @Override
     public void wasShown() {
         super.wasShown();
-        this.layer.add(bg);
-        this.layer.add(back);
+        this.layer.add(bg); //ใส่ BG
+        this.layer.add(back); // ปุ่ม Back
+         z = new Zealot(560f,400f);
+        this.layer.add(z.layer());
     }
 
-
+    public void update(int delta) {
+        this.z.update(delta);
+    }
 }

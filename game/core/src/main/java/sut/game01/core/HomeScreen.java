@@ -27,7 +27,7 @@ public class HomeScreen extends UIScreen{
                 AxisLayout.vertical().gap(15),
                 SimpleStyles.newSheet(),layer);
         root.addStyles(Style.BACKGROUND
-                .is(Background.bordered("images/aa.png", 0xFF99CCFF, 5)
+                .is(Background.bordered(0xFFCCCCCF, 0xFF99CCFF, 5)
                 .inset(5,10)));
         root.setSize(width(), height());
         root.add(new Label("EVENT DRIVEN PROGRAMMING")
